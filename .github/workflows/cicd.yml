@@ -69,7 +69,7 @@ jobs:
       with:
         context: .
         push: true
-        tags: imzerofiltre/zerofiltretech-blog:${{ github.run_number }}_${{ env.docker_tag_suffix }}
+        tags: nedimitri/zerofiltretech-blog:${{ github.run_number }}_${{ env.docker_tag_suffix }}
         cache-from: type=local,src=/tmp/.buildx-cache
         cache-to: type=local,dest=/tmp/.buildx-cache-new
 
