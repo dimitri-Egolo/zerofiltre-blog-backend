@@ -15,6 +15,7 @@
     <description>Zerofiltre blog backend</description>
     <properties>
         <java.version>11</java.version>
+        <lombok.version>1.18.30</lombok.version>
         <mapstruct.version>1.4.2.Final</mapstruct.version>
         <logbook.version>2.14.0</logbook.version>
         <timestamp>${maven.build.timestamp}</timestamp>

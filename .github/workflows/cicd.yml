@@ -13,7 +13,7 @@ jobs:
     runs-on: ubuntu-latest
 
     env:
-      docker_tag_suffix: 'imphilippesimo'
+      docker_tag_suffix: 'nedimitri'
       tag_number : ${{ github.run_number }}
 
     steps:
