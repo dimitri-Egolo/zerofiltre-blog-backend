@@ -29,7 +29,7 @@ spec:
           ports:
             - containerPort: 6379
         - name: zerofiltretech-blog-api
-          image: nedimitri/zerofiltretech-blog:6_nedimitri
+          image: nedimitri/zerofiltretech-blog:latest
           imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 80
