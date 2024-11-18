@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  namespace: k8slive
+  namespace: nedimitri
   name: zerofiltretech-blog-api
 spec:
   minReadySeconds: 30
@@ -29,14 +29,14 @@ spec:
           ports:
             - containerPort: 6379
         - name: zerofiltretech-blog-api
-          image: imzerofiltre/zerofiltretech-blog:16_imphilippesimo
+          image: nedimitri/zerofiltretech-blog:2_nedimitri
           imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 80
           resources:
             requests:
                 cpu: '0.05'
-                memory: 1Gi
+                memory: 100Mi
             limits:
                 cpu: '1'
                 memory: 2Gi
@@ -64,7 +64,7 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  namespace: k8slive
+  namespace: nedimitri
   name: zerofiltretech-blog-api
 spec:
   ports:
@@ -77,7 +77,7 @@ spec:
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  namespace: k8slive
+  namespace: nedimitri
   name: zerofiltretech-blog-api
   annotations:
     nginx.ingress.kubernetes.io/rewrite-target: /
@@ -85,7 +85,7 @@ metadata:
     cert-manager.io/cluster-issuer: letsencrypt-prod
 spec:
   rules:
-    - host: imphilippesimo.blog-api.zerofiltre.tech
+    - host: nedimitri.blog-api.zerofiltre.tech
       http:
         paths:
           - path: /
@@ -97,5 +97,5 @@ spec:
                   number: 80
   tls: # < placing a host in the TLS config will indicate a certificate should be created
     - hosts:
-        - imphilippesimo.blog-api.zerofiltre.tech
+        - nedimitri.blog-api.zerofiltre.tech
       secretName: blog-api-zerofiltre-ingress-cert # < cert-manager will store the created certificate in this secret.
