@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  namespace: k8slive
+  namespace: nedimitri
   name: zerofiltretech-blog-api
 data:
   LOGGING_LEVEL_ORG_SPRINGFRAMEWORK: INFO
@@ -48,3 +48,4 @@ data:
   #Opentelemetry
   OTEL_EXPORTER_OTLP_PROTOCOL: grpc
   OTEL_EXPORTER_OTLP_ENDPOINT: http://otelcol-opentelemetry-collector.zerofiltre-bootcamp.svc.cluster.local:4317
+  OTEL_SERVICE_NAME: nedimitri-dev
